@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+import * as mongoose from "mongoose"
 
 const Person = mongoose.model("Person", {
     name: String,
@@ -6,4 +6,4 @@ const Person = mongoose.model("Person", {
     approved: Boolean
 })
 
-module.exports = Person
+export default Person

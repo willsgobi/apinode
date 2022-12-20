@@ -1,9 +1,12 @@
 // configuração inicial
-require("dotenv").config()
-const express = require("express")
+import * as dotenv from 'dotenv'
+dotenv.config()
+import express from 'express'
 const app = express()
-const mongoose = require("mongoose")
+import * as mongoose from 'mongoose';
+import personRoutes from "./routes/personRoutes.mjs"
 const port = process.env.PORT || 3000
+console.log(port)
 
 // forma de ler JSON / middlewares
 app.use(
@@ -15,7 +18,7 @@ app.use(
 app.use(express.json())
 
 // rotas da API
-const personRoutes = require("./routes/personRoutes")
+
 app.use("/person", personRoutes)
 
 // rota inicial
